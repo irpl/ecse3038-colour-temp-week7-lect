@@ -29,7 +29,7 @@ def get_temp(api_key: Annotated[str | None, Header()] = None):
   return temps[api_key]
 
 
-@app.post("/temp")
+@app.put("/temp")
 async def set_temp(request: Request,
                    api_key: Annotated[str | None, Header()] = None):
   if api_key is None:
